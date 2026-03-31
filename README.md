@@ -33,8 +33,6 @@ To provide a modern digital solution that boosts **customer convenience** and **
 | CSS Modules    | Component-scoped styling             |
 | Node.js        | Runtime environment                  |
 
-> **Migrated from:** HTML5 · CSS3 · JavaScript · PHP · MySQL · Bootstrap · XAMPP
-
 ---
 
 ## ⚙️ Core Features
@@ -121,17 +119,6 @@ NODE_ENV=development
 # 3. Run development server
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-### Default Credentials
-
-| Role  | Email                  | Password   |
-|-------|------------------------|------------|
-| Admin | admin@epiccafe.com     | admin123   |
-| User  | student@college.edu    | student123 |
-
-> Run `node mongodb-setup.js` once to seed these accounts (if not already done).
 
 ### Seed Menu Data
 
