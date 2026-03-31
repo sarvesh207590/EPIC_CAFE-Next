@@ -1,0 +1,221 @@
+.page {
+    min-height: 100vh;
+    background: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Receipt paper */
+.receipt {
+    background: #fff;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* Jagged top edge */
+.receipt::before {
+    content: '';
+    display: block;
+    height: 16px;
+    background: radial-gradient(circle at 10px -4px, transparent 10px, #fff 10px) repeat-x;
+    background-size: 20px 16px;
+    background-color: #f0f2f5;
+}
+
+/* Jagged bottom edge */
+.receipt::after {
+    content: '';
+    display: block;
+    height: 16px;
+    background: radial-gradient(circle at 10px 20px, transparent 10px, #fff 10px) repeat-x;
+    background-size: 20px 16px;
+    background-color: #f0f2f5;
+}
+
+.receiptInner {
+    padding: 8px 28px 24px;
+}
+
+.receiptHeader {
+    text-align: center;
+    padding: 16px 0 20px;
+    border-bottom: 2px dashed #e5e7eb;
+    margin-bottom: 20px;
+}
+
+.shopName {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: 1px;
+}
+
+.shopSub {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px dashed #f3f4f6;
+    font-size: 14px;
+}
+
+.row:last-of-type {
+    border-bottom: none;
+}
+
+.rowLabel {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.rowValue {
+    color: #111827;
+    font-weight: 600;
+    text-align: right;
+    max-width: 55%;
+    word-break: break-all;
+}
+
+.divider {
+    border: none;
+    border-top: 2px dashed #e5e7eb;
+    margin: 16px 0;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 16px;
+}
+
+.totalLabel {
+    font-weight: 700;
+    color: #111827;
+}
+
+.totalValue {
+    font-size: 22px;
+    font-weight: 800;
+    color: #16a34a;
+}
+
+.statusBadge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.thankYou {
+    text-align: center;
+    padding: 20px 0 8px;
+    border-top: 2px dashed #e5e7eb;
+    margin-top: 16px;
+}
+
+.thankYou p {
+    font-size: 13px;
+    color: #9ca3af;
+    margin: 4px 0;
+}
+
+.thankYou strong {
+    font-size: 15px;
+    color: #374151;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    padding: 20px 28px 28px;
+}
+
+.printBtn {
+    flex: 1;
+    padding: 12px;
+    background: #1a1a2e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.printBtn:hover {
+    background: #2d2d4e;
+}
+
+.homeBtn {
+    flex: 1;
+    padding: 12px;
+    background: #f3f4f6;
+    color: #374151;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeBtn:hover {
+    background: #e5e7eb;
+}
+
+.loading,
+.errorState {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.errorState {
+    color: #dc2626;
+}
+
+@media print {
+    .page {
+        background: #fff;
+        padding: 0;
+    }
+
+    .receipt {
+        box-shadow: none;
+    }
+
+    .receipt::before,
+    .receipt::after {
+        display: none;
+    }
+
+    .actions {
+        display: none;
+    }
+}

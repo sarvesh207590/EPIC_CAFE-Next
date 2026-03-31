@@ -1,0 +1,263 @@
+﻿/* ── Page ─────────────────────────────────────────────────────── */
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Card ─────────────────────────────────────────────────────── */
+.card {
+    display: flex;
+    width: 100%;
+    max-width: 860px;
+    min-height: 520px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Left branding panel ──────────────────────────────────────── */
+.panel {
+    flex: 0 0 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 28px;
+    transition: background 0.4s ease;
+}
+
+.panelUser {
+    background: linear-gradient(145deg, #ff6b6b, #fa4545);
+}
+
+.panelAdmin {
+    background: linear-gradient(145deg, #1a1a2e, #2d2d4e);
+}
+
+.panelInner {
+    text-align: center;
+    color: #fff;
+}
+
+.logo {
+    font-size: 52px;
+    margin-bottom: 12px;
+}
+
+.brand {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.tagline {
+    font-size: 14px;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin: 0 0 32px;
+}
+
+/* ── Mode switcher ────────────────────────────────────────────── */
+.modeSwitcher {
+    display: flex;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    padding: 4px;
+    gap: 4px;
+}
+
+.switchBtn,
+.switchActive {
+    flex: 1;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.switchBtn {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.switchBtn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.switchActive {
+    background: #fff;
+    color: #1a1a2e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Right form panel ─────────────────────────────────────────── */
+.formPanel {
+    flex: 1;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 40px;
+}
+
+.formInner {
+    width: 100%;
+    max-width: 320px;
+}
+
+.formTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 6px;
+}
+
+.formSub {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0 0 28px;
+}
+
+/* ── Error ────────────────────────────────────────────────────── */
+.error {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+/* ── Fields ───────────────────────────────────────────────────── */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.field input {
+    padding: 12px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #111827;
+    background: #fafafa;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field input:focus {
+    border-color: #fa4545;
+    box-shadow: 0 0 0 3px rgba(250, 69, 69, 0.1);
+    background: #fff;
+}
+
+/* ── Submit ───────────────────────────────────────────────────── */
+.submitBtn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 4px;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.submitBtn:hover:not(:disabled) {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.submitUser {
+    background: linear-gradient(135deg, #ff6b6b, #fa4545);
+}
+
+.submitAdmin {
+    background: linear-gradient(135deg, #1a1a2e, #2d2d4e);
+}
+
+/* ── Footer ───────────────────────────────────────────────────── */
+.registerLink {
+    text-align: center;
+    font-size: 13px;
+    color: #6b7280;
+    margin: 20px 0 0;
+}
+
+.registerLink a {
+    color: #fa4545;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.registerLink a:hover {
+    text-decoration: underline;
+}
+
+.adminNote {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 20px 0 0;
+    background: #f9fafb;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 680px) {
+    .card {
+        flex-direction: column;
+        max-width: 420px;
+    }
+
+    .panel {
+        flex: none;
+        padding: 28px 24px;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .formPanel {
+        padding: 32px 24px;
+    }
+}

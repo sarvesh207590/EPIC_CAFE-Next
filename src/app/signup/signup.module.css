@@ -1,0 +1,209 @@
+/* ── Page ─────────────────────────────────────────────────────── */
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Card (two-panel) ─────────────────────────────────────────── */
+.card {
+    display: flex;
+    width: 100%;
+    max-width: 860px;
+    min-height: 520px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Left branding panel ──────────────────────────────────────── */
+.panel {
+    flex: 0 0 320px;
+    background: linear-gradient(145deg, #ff6b6b, #fa4545);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 28px;
+}
+
+.panelInner {
+    text-align: center;
+    color: #fff;
+}
+
+.logo {
+    font-size: 52px;
+    margin-bottom: 12px;
+}
+
+.brand {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.tagline {
+    font-size: 14px;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin: 0 0 28px;
+}
+
+.loginPrompt {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+.loginLink {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.loginLink:hover {
+    opacity: 0.85;
+}
+
+/* ── Right form panel ─────────────────────────────────────────── */
+.formPanel {
+    flex: 1;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 40px;
+}
+
+.formInner {
+    width: 100%;
+    max-width: 320px;
+}
+
+.formTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 6px;
+}
+
+.formSub {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0 0 28px;
+}
+
+/* ── Alerts ───────────────────────────────────────────────────── */
+.error {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.success {
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+/* ── Form ─────────────────────────────────────────────────────── */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.field input {
+    padding: 12px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #111827;
+    background: #fafafa;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field input:focus {
+    border-color: #fa4545;
+    box-shadow: 0 0 0 3px rgba(250, 69, 69, 0.1);
+    background: #fff;
+}
+
+/* ── Submit ───────────────────────────────────────────────────── */
+.submitBtn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 4px;
+    background: linear-gradient(135deg, #ff6b6b, #fa4545);
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.submitBtn:hover:not(:disabled) {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 680px) {
+    .card {
+        flex-direction: column;
+        max-width: 420px;
+    }
+
+    .panel {
+        flex: none;
+        padding: 28px 24px;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .formPanel {
+        padding: 32px 24px;
+    }
+}
