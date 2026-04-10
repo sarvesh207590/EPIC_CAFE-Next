@@ -2,6 +2,10 @@
 
 > A full-stack web application for **Epic Cafe, Panvel** that streamlines food ordering for students and staff at Pillai College of Engineering. Built with **Next.js 14, React 18, MongoDB, and JWT authentication**.
 
+## 🌐 Live Demo
+
+**🚀 [View Live Application](https://epic-cafe-next-mlc5.vercel.app/)**
+
 ---
 
 ## 📌 Abstract
