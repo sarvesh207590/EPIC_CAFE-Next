@@ -74,7 +74,7 @@ export default function AdminDashboard() {
             body: JSON.stringify(loginData)
         })
         if (r.ok) { setAuth(true); fetchOrders() }
-        else setLoginError('Invalid credentials. Try admin@epiccafe.com / admin123')
+        else setLoginError('Invalid credentials. Try admin@gmail.com / admin123')
     }
 
     // orders
@@ -219,7 +219,7 @@ export default function AdminDashboard() {
                 <div className={styles.loginLogo}>🍽️</div>
                 <h2>Epic Cafe Admin</h2>
                 <form onSubmit={handleLogin}>
-                    <input type="email" placeholder="Email" value={loginData.email}
+                    <input type="email" placeholder="admin@gmail.com" value={loginData.email}
                         onChange={e => setLoginData({ ...loginData, email: e.target.value })} required />
                     <input type="password" placeholder="Password" value={loginData.password}
                         onChange={e => setLoginData({ ...loginData, password: e.target.value })} required />

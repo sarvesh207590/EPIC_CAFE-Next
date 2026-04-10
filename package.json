@@ -8,10 +8,12 @@
         "start": "next start",
         "lint": "next lint",
         "setup-db": "node mongodb-setup.js",
+        "setup-admin": "node setup-admin.js",
         "migrate-images": "node migrate-images.js"
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",
+        "dotenv": "^17.4.1",
         "jsonwebtoken": "^9.0.2",
         "mongodb": "^6.3.0",
         "mongoose": "^8.0.3",

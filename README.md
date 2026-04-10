@@ -112,13 +112,25 @@ npm install
 
 # 2. Create environment file
 # .env.local
-MONGODB_URI=mongodb://localhost:27017/epic-cafe
+MONGODB_URI=mongodb+srv://sarveshdb_global:Sarsar%40098@sarveshcluster.zaf6xtu.mongodb.net/epic-cafe?retryWrites=true&w=majority
 JWT_SECRET=your-secret-key-here
 NODE_ENV=development
 
-# 3. Run development server
+# 3. Setup admin user
+npm run setup-admin
+
+# 4. Run development server
 npm run dev
 ```
+
+### Admin Credentials
+
+After running `npm run setup-admin`, use these credentials to login:
+
+- **Email:** `admin@gmail.com`
+- **Password:** `admin123`
+
+⚠️ **Important:** Change the admin password after first login!
 
 ### Seed Menu Data
 
@@ -152,3 +164,96 @@ After logging in as admin, go to **Admin → 🍴 Menu → Seed Default Data** t
 ---
 
 © 2025 Epic Cafe · Pillai College of Engineering · All rights reserved
+
+
+---
+
+## 🌐 Deployment on Vercel
+
+### Step 1: Prepare Your Repository
+1. Make sure all changes are committed to Git
+2. Push your code to GitHub/GitLab/Bitbucket
+
+```bash
+git add .
+git commit -m "Prepare for Vercel deployment"
+git push origin main
+```
+
+### Step 2: Deploy to Vercel
+
+1. Go to [vercel.com](https://vercel.com) and sign in with your GitHub account
+2. Click **"Add New Project"**
+3. Import your repository
+4. Configure your project:
+   - **Framework Preset:** Next.js (auto-detected)
+   - **Root Directory:** `./` (leave as default)
+   - **Build Command:** `npm run build` (auto-detected)
+   - **Output Directory:** `.next` (auto-detected)
+
+### Step 3: Add Environment Variables
+
+In the Vercel project settings, add these environment variables:
+
+```
+MONGODB_URI=mongodb+srv://sarveshdb_global:Sarsar%40098@sarveshcluster.zaf6xtu.mongodb.net/epic-cafe?retryWrites=true&w=majority
+JWT_SECRET=your-strong-random-secret-key-here
+NODE_ENV=production
+```
+
+**Important:** Generate a strong JWT secret for production. You can use:
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+### Step 4: Deploy
+
+1. Click **"Deploy"**
+2. Wait for the build to complete (2-3 minutes)
+3. Your app will be live at `https://your-project-name.vercel.app`
+
+### Step 5: Configure Custom Domain (Optional)
+
+1. Go to your project settings in Vercel
+2. Navigate to **Domains**
+3. Add your custom domain and follow DNS configuration instructions
+
+### MongoDB Atlas Network Access
+
+Make sure to allow Vercel's IP addresses in MongoDB Atlas:
+
+1. Go to MongoDB Atlas → Network Access
+2. Click **"Add IP Address"**
+3. Select **"Allow Access from Anywhere"** (0.0.0.0/0) for Vercel deployments
+   - Or add specific Vercel IP ranges if you prefer tighter security
+
+### Troubleshooting
+
+- **Build fails:** Check the build logs in Vercel dashboard
+- **Database connection fails:** Verify MONGODB_URI is correct and MongoDB Atlas allows connections
+- **Authentication issues:** Ensure JWT_SECRET is set in Vercel environment variables
+- **Images not loading:** Make sure images are in `public/img/` directory
+
+### Automatic Deployments
+
+Vercel automatically deploys:
+- **Production:** Every push to `main` branch
+- **Preview:** Every pull request gets a unique preview URL
+
+---
+
+## 🔧 Local Development with MongoDB Atlas
+
+To test with MongoDB Atlas locally:
+
+1. Update `.env.local`:
+```
+MONGODB_URI=mongodb+srv://sarveshdb_global:Sarsar%40098@sarveshcluster.zaf6xtu.mongodb.net/epic-cafe?retryWrites=true&w=majority
+```
+
+2. Restart your development server:
+```bash
+npm run dev
+```
+
+3. Your local app will now connect to MongoDB Atlas instead of local MongoDB

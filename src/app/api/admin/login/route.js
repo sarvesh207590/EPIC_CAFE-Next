@@ -32,7 +32,7 @@ export async function POST(request) {
         }
 
         // Check if user is admin (you can modify this logic)
-        const isAdmin = user.email === 'admin@epiccafe.com' || user.username === 'admin'
+        const isAdmin = user.email === 'admin@gmail.com' || user.username === 'admin'
 
         if (!isAdmin) {
             return NextResponse.json(
