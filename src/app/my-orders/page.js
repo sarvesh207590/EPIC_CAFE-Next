@@ -31,6 +31,7 @@ export default function MyOrders() {
     const [isSearching, setIsSearching] = useState(false)
     const [queueInfo, setQueueInfo] = useState(null)
     const [notifPermission, setNotifPermission] = useState('default')
+    const [lastUpdated, setLastUpdated] = useState(null)
     const prevStatusRef = useRef({})
 
     // Request notification permission on mount
@@ -83,6 +84,7 @@ export default function MyOrders() {
                 })
 
                 setOrders(newOrders)
+                setLastUpdated(new Date())
                 localStorage.setItem('userContact', contact)
             } else {
                 if (!silent) { setOrders([]); alert('No orders found for this contact number') }
@@ -95,11 +97,20 @@ export default function MyOrders() {
         }
     }, [sendNotification])
 
-    // Poll every 15 seconds for status updates
+    // Poll every 5 seconds + refresh immediately when tab becomes visible (mobile fix)
     useEffect(() => {
         if (!contactNumber || contactNumber.length !== 10) return
-        const id = setInterval(() => fetchOrders(contactNumber, true), 15000)
-        return () => clearInterval(id)
+        const id = setInterval(() => fetchOrders(contactNumber, true), 5000)
+
+        const onVisible = () => {
+            if (document.visibilityState === 'visible') fetchOrders(contactNumber, true)
+        }
+        document.addEventListener('visibilitychange', onVisible)
+
+        return () => {
+            clearInterval(id)
+            document.removeEventListener('visibilitychange', onVisible)
+        }
     }, [contactNumber, fetchOrders])
 
     const fetchQueueInfo = async () => {
@@ -180,7 +191,9 @@ export default function MyOrders() {
 
             {orders.length > 0 && (
                 <div className={styles.ordersSection}>
-                    <h2>Your Orders ({orders.length}) <span className={styles.liveTag}>● Live</span></h2>
+                    <h2>Your Orders ({orders.length}) <span className={styles.liveTag}>● Live</span>
+                        {lastUpdated && <span className={styles.lastUpdated}>Updated {lastUpdated.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</span>}
+                    </h2>
 
                     {queueInfo && (
                         <div className={styles.queueInfo}>
