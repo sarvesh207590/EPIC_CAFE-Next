@@ -10,6 +10,7 @@ export default function Beverages() {
     const router = useRouter()
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
+    const [quantities, setQuantities] = useState({})
 
     useEffect(() => {
         fetch('/api/menu?category=beverages')
@@ -18,9 +19,13 @@ export default function Beverages() {
             .finally(() => setLoading(false))
     }, [])
 
-    const handleOrder = (name, price) => {
+    const getQty = (id) => quantities[id] || 1
+    const changeQty = (id, delta) => setQuantities(q => ({ ...q, [id]: Math.max(1, (q[id] || 1) + delta) }))
+
+    const handleOrder = (name, price, qty) => {
         sessionStorage.setItem('name', name)
         sessionStorage.setItem('price', price.toString())
+        sessionStorage.setItem('quantity', qty.toString())
         router.push('/order')
     }
 
@@ -65,16 +70,21 @@ export default function Beverages() {
                             )}
                             <div className={styles.footer}>
                                 <div className={styles.priceBlock}>
-                                    <span className={styles.price}>₹{item.price}</span>
+                                    <span className={styles.price}>₹{item.price * getQty(item._id)}</span>
                                     {item.unit && <span className={styles.unit}>{item.unit}</span>}
                                 </div>
-                                <button
-                                    className={styles.orderBtn}
-                                    onClick={() => handleOrder(item.name, item.price)}
-                                >
-                                    Order Now
-                                </button>
+                                <div className={styles.qtyRow}>
+                                    <button className={styles.qtyBtn} onClick={() => changeQty(item._id, -1)}>−</button>
+                                    <span className={styles.qtyNum}>{getQty(item._id)}</span>
+                                    <button className={styles.qtyBtn} onClick={() => changeQty(item._id, 1)}>+</button>
+                                </div>
                             </div>
+                            <button
+                                className={styles.orderBtn}
+                                onClick={() => handleOrder(item.name, item.price, getQty(item._id))}
+                            >
+                                Order Now
+                            </button>
                         </div>
                     </div>
                 ))}

@@ -157,6 +157,7 @@
     justify-content: space-between;
     gap: 10px;
     margin-top: auto;
+    margin-bottom: 10px;
 }
 
 .priceBlock {
@@ -177,12 +178,13 @@
 }
 
 .orderBtn {
-    padding: 9px 18px;
+    width: 100%;
+    padding: 10px 18px;
     background: #16a34a;
     color: #fff;
     border: none;
     border-radius: 8px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     transition: background 0.15s, transform 0.1s;
@@ -192,6 +194,44 @@
 .orderBtn:hover {
     background: #15803d;
     transform: translateY(-1px);
+}
+
+.qtyRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+.qtyBtn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: #16a34a;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.qtyBtn:hover {
+    background: #15803d;
+}
+
+.qtyNum {
+    font-size: 15px;
+    font-weight: 700;
+    color: #15803d;
+    min-width: 20px;
+    text-align: center;
 }
 
 @media (max-width: 480px) {

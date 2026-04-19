@@ -20,8 +20,10 @@ export default function Order() {
     useEffect(() => {
         const item = sessionStorage.getItem('name') || ''
         const p = parseInt(sessionStorage.getItem('price')) || 0
+        const q = parseInt(sessionStorage.getItem('quantity')) || 1
         setFoodItem(item)
         setPrice(p)
+        setQuantity(q)
     }, [])
 
     const total = price * quantity
