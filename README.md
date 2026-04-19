@@ -4,7 +4,7 @@
 
 ## 🌐 Live Demo
 
-**🚀 [https://epic-canteen.vercel.app/]((https://epic-canteen.vercel.app/)**
+**🚀 [https://epic-canteen.vercel.app/](https://epic-canteen.vercel.app/)**
 
 
 ---
