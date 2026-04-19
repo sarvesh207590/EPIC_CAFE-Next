@@ -135,11 +135,6 @@ After running `npm run setup-admin`, use these credentials to login:
 - **Email:** `admin@gmail.com`
 - **Password:** `admin123`
 
-⚠️ **Important:** Change the admin password after first login!
-
-### Seed Menu Data
-
-After logging in as admin, go to **Admin → 🍴 Menu → Seed Default Data** to populate all 22 default menu items.
 
 ---
 
