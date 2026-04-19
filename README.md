@@ -4,7 +4,8 @@
 
 ## 🌐 Live Demo
 
-**🚀 [View Live Application](https://epic-cafe-next-mlc5.vercel.app/)**
+**🚀 [https://epic-canteen.vercel.app/]((https://epic-canteen.vercel.app/)**
+
 
 ---
 
