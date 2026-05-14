@@ -196,8 +196,8 @@ git push origin main
 In the Vercel project settings, add these environment variables:
 
 ```
-MONGODB_URI=mongodb+srv://sarveshdb_global:Sarsar%40098@sarveshcluster.zaf6xtu.mongodb.net/epic-cafe?retryWrites=true&w=majority
-JWT_SECRET=your-strong-random-secret-key-here
+MONGODB_URI=mongodb+srv://hcluster.zaf6ongodb.net/epic-cafe?retryWrites=true&w=majority
+JWT_SECRET=your-strong-random-secret-key-her
 NODE_ENV=production
 ```
 
